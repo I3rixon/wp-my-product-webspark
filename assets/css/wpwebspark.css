@@ -1,0 +1,8 @@
+.wpmpw-add-product input[type="text"], .wpmpw-add-product input[type="number"] {
+    width: 100%;
+}
+@media (min-width: 768px) {
+	.col-full {
+        max-width: 83.498938em !important;
+    }
+}

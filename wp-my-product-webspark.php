@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP Product Webspark
  * Description: Extends WooCommerce functionality to allow CRUD operations for products via My Account.
- * Version: 1.0.2
+ * Version: 1.0.3
  * Author: Alex
  */
 

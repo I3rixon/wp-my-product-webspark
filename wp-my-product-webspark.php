@@ -27,6 +27,13 @@ function wpmpw_activate_check() {
 }
 register_activation_hook(__FILE__, 'wpmpw_activate_check');
 
+function wpmpw_activate() {
+    wpmpw_activate_check();
+    wpmpw_add_endpoints();
+    flush_rewrite_rules();
+}
+register_activation_hook(__FILE__, 'wpmpw_activate');
+
 // Add custom menu items in My Account.
 add_filter('woocommerce_account_menu_items', 'wpmpw_add_menu_items');
 function wpmpw_add_menu_items($items)
@@ -77,9 +84,7 @@ function wpmpw_handle_add_or_edit_product() {
     if (!is_user_logged_in()) {
         return;
     }
-
-
-
+    
     // Retrieve form data
     $product_id = isset($_POST['product_id']) ? intval($_POST['product_id']) : 0;
     $product_title = sanitize_text_field($_POST['product_title']);
